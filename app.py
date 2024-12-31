@@ -5,10 +5,18 @@ import pickle
 import numpy as np
 import sklearn
 from sklearn.preprocessing import StandardScaler
+import joblib
+from joblib import load
+
 app = Flask(__name__)
-model = pickle.load(open('random_forest_regression_model.pkl', 'rb'))
+
+#from sklearn.utils import fix_imports
+#model = pickle.load(open('random_forest_regression_model2.pkl', 'rb'), fix_imports=True)
 
 
+model = pickle.load(open('random_forest_regression_model4.pkl', 'rb'))
+
+#model = joblib.load('random_forest_regression_model4.joblib')
 
 @app.route('/',methods=['GET'])
 def Home():
