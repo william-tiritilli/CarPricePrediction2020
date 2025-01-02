@@ -11,10 +11,9 @@ from joblib import load
 app = Flask(__name__)
 
 #from sklearn.utils import fix_imports
-#model = pickle.load(open('random_forest_regression_model2.pkl', 'rb'), fix_imports=True)
-
-
-model = pickle.load(open('random_forest_regression_model4.pkl', 'rb'))
+# Load the model
+with open('random_forest_regression_model.pkl', 'rb') as file:
+    model = pickle.load(file)
 
 #model = joblib.load('random_forest_regression_model4.joblib')
 
